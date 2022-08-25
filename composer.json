@@ -1,0 +1,28 @@
+{
+  "authors": [
+    {
+      "name": "Elivelton G. silva",
+      "email": "eliveltongsoficial@gmail.com",
+      "role": "Developer",
+      "homepage": "https://eliveltongoncalves.com.br"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "autoload": {
+    "psr-4": {
+      "Source\\": "source/"
+    },
+    "files": [
+      "source/Config.php"
+    ]
+  },
+  "require": {
+    "coffeecode/router": "1.0.*",
+    "league/plates": "v4.0.0-alpha"
+  },
+  "require-dev": {
+    "kint-php/kint": "^4.1"
+  }
+}
