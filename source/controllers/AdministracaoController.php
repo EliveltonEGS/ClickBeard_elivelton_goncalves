@@ -17,6 +17,6 @@ class AdministracaoController
     
     public function home() 
     {
-        echo $this->view->render('home');
+        echo $this->view->render('adm/home');
     }
 }

@@ -4,7 +4,7 @@ namespace Source\Models;
 
 use PDO;
 
-class DbConnection
+class Model
 {   
     private function getConnect()
     {

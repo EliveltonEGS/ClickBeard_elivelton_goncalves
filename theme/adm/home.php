@@ -1,6 +1,6 @@
 <?php $v->layout("_theme", ["title" => "ClickBeard"]); ?>
 
-Home
+<h1>home</h1>
 
 <?php $v->start("js"); ?>
 
