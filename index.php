@@ -7,23 +7,20 @@ require __DIR__ . "/vendor/autoload.php";
 $router = new Router(ROOT);
 $router->namespace("Source\Controllers");
 
-//category
-//$router->group(null);
-//$router->get("/", "CategoryController:home", "category.home");
-//$router->get("/list", "CategoryController:list", "category.list");
-//$router->get("/create", "CategoryController:create", "category.create");
-//$router->get("/read-id", "CategoryController:readId", "category.readId");
-//$router->get("/update", "CategoryController:update", "category.update");
-//$router->get("/delete", "CategoryController:delete", "category.delete");
-
-//post
+#ROTAS DE USUARIO
 $router->group(null);
 $router->get('/', 'UsuarioController:login', 'usuario.login');
 $router->get('/registro', 'UsuarioController:registro', 'usuario.registro');
+$router->post('/cadastrar', 'UsuarioController:cadastrar', 'usuario.cadastrar');
+$router->post('/logar', 'UsuarioController:logar', 'usuario.logar');
+$router->get('/sair', 'UsuarioController:sair', 'usuario.sair');
+$router->get('/perfil', 'UsuarioController:perfil', 'usuario.perfil');
 
+#ROTAS DA HOME PRINCIPAL ADMISTRACAO
 $router->group('/adm');
-$router->get('/', 'AdministracaoController:home', 'adm.home');
+$router->get('/home', 'AdministracaoController:home', 'adm.home');
 
+#ROTAS DE ESPECIALIDADES
 $router->group('/especialidade');
 $router->get('/', 'EspecialidadeController:home', 'especialidade.home');
 $router->get('/novo', 'EspecialidadeController:novo', 'especialidade.novo');
@@ -31,11 +28,18 @@ $router->get('/editar/{id}', 'EspecialidadeController:editar', 'especialidade.ed
 $router->post('/cadastrar', 'EspecialidadeController:cadastrar', 'especialidade.cadastrar');
 $router->get('/deletar/{id}', 'EspecialidadeController:deletar', 'especialidade.deletar');
 
+#ROTAS DE BARBEIROS
+$router->group('/barbeiro');
+$router->get('/', 'BarbeiroController:home', 'barbeiro.home');
+$router->get('/novo', 'BarbeiroController:novo', 'barbeiro.novo');
+$router->get('/especialidade', 'BarbeiroController:especialidade', 'barbeiro.especialidade');
+$router->post('/cadastrar', 'BarbeiroController:cadastrar', 'barbeiro.cadastrar');
+$router->get('/deletar/{id}', 'BarbeiroController:deletar', 'BarbeiroController.deletar');
+$router->post('/get-especialidade', 'BarbeiroController:especialidadBarbeiro', 'BarbeiroController.get-especialidade');
 
-
-// $router->get('/read-codremessa/{id}', 'PedidoController:getPedByRemessa', 'pedido.read-codremessa');
-// $router->get('/busca-codhist/{id}', 'PedidoController:getDataEdicao', 'pedido.get-edicao');
-// $router->post('/editar', 'PedidoController:editar', 'pedido.editar');
+#ROTAS DO AGENDAMENTO
+$router->group('/agendamento');
+$router->get('/novo', 'AgendamentoController:novo', 'agendamento.novo');
 
 $router->dispatch();
 

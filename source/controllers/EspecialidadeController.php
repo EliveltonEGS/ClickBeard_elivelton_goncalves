@@ -6,13 +6,15 @@ use League\Plates\Engine;
 use Source\Models\EspecialidadeModel;
 use Source\Entities\Especialidade;
 
-class EspecialidadeController {
+class EspecialidadeController
+{
 
     private $especialidadeModel;
     private $especialidade;
     private $view;
 
-    public function __construct($router) {
+    public function __construct($router)
+    {
         $this->especialidadeModel = new EspecialidadeModel();
         $this->especialidade = new Especialidade();
 
@@ -20,19 +22,41 @@ class EspecialidadeController {
         $this->view->addData(["router" => $router]);
     }
 
-    public function home(): void {
+    public function home(): void
+    {
+        session_start();
+        if (!isset($_SESSION["USUARIO"])) {
+            echo $this->view->render('usuario/login');
+            return;
+        }
+
         echo $this->view->render('especialidade/home', ['especialidades' => $this->especialidadeModel->listarTodos()]);
     }
 
-    public function novo() {
+    public function novo()
+    {
+        session_start();
+        if (!isset($_SESSION["USUARIO"])) {
+            echo $this->view->render('usuario/login');
+            return;
+        }
+
         echo $this->view->render('especialidade/novo');
     }
 
-    public function editar(array $data): void {
+    public function editar(array $data): void
+    {
+        session_start();
+        if (!isset($_SESSION["USUARIO"])) {
+            echo $this->view->render('usuario/login');
+            return;
+        }
+
         echo $this->view->render('especialidade/editar', ['especialidade' => $this->especialidadeModel->buscarPorId($data['id'])]);
     }
 
-    public function cadastrar(array $data): void {
+    public function cadastrar(array $data): void
+    {
         if (in_array('', $data)) {
             echo $this->view->render('especialidade/editar', ['error' => 'Todos os campos são obrigatórios!', 'especialidade_id' => $data['especialidade_id']]);
             return;
@@ -50,9 +74,9 @@ class EspecialidadeController {
         }
     }
 
-    public function deletar(array $data): void {
+    public function deletar(array $data): void
+    {
         $this->especialidadeModel->deletarPorId($data['id']);
         echo $this->view->render('especialidade/home', ['especialidades' => $this->especialidadeModel->listarTodos(), 'success' => 'Especialidade removida com sucesso!']);
     }
-
 }

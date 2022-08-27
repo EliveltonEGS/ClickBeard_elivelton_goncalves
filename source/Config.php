@@ -25,15 +25,17 @@ function url(string $path): string
     return ROOT;
 }
 
-function dd($data) {
+function dd($data)
+{
     d($data);
 }
 
-function debug($data) {
-    echo "<pre>".print_r($data, true)."</pre>";
+function debug($data)
+{
+    echo "<pre>" . print_r($data, true) . "</pre>";
 }
 
 function writeLog($value, $logName)
 {
-    error_log(json_encode($value) . PHP_EOL, 3, "C:/xampp/htdocs/ClickBeard_elivelton_goncalves/log/{$logName}.log");
+    error_log(print_r($value, true) . PHP_EOL, 3, "C:/xampp/htdocs/ClickBeard_elivelton_goncalves/log/{$logName}.log");
 }

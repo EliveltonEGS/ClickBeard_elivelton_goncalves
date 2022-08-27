@@ -13,9 +13,7 @@
 
     <!-- Custom fonts for this template-->
     <link href="<?= url("/theme/assets/sb_admin/vendor/fontawesome-free/css/all.min.css"); ?>" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
     <link href="<?= url("/theme/assets/sb_admin/css/sb-admin-2.min.css"); ?>" rel="stylesheet">
@@ -40,21 +38,27 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Bem Vindo!</h1>
                                     </div>
-                                    <div class="user">
-                                        <div class="form-group">
-                                            <input type="email" class="form-control form-control-user"
-                                            id="email" placeholder="Entre com seu email...">
+                                    <?php if (isset($error)) { ?>
+                                        <div class="alert alert-danger" role="alert">
+                                            <?= $error; ?>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control form-control-user"
-                                                id="senha" placeholder="Senha">
-                                        </div>
-                                        <div>
-                                            <button class="btn btn-primary btn-user btn-block">Entrar</button>
-                                        </div>
-                                    <div class="text-center">
-                                        <a class="small" href="<?= url("/registro") ?>">Criar Conta</a>
-                                    </div>
+                                    <?php } ?>
+
+                                    <form action="<?= $router->route("usuario.logar"); ?>" method="post" enctype="multipart/form-data">
+                                        <div class="user">
+                                            <div class="form-group">
+                                                <input type="email" class="form-control form-control-user" id="email" name="email" placeholder="Entre com seu email...">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="password" class="form-control form-control-user" id="senha" name="senha" placeholder="Senha...">
+                                            </div>
+                                            <div>
+                                                <button type="submit" class="btn btn-primary btn-user btn-block">Entrar</button>
+                                            </div>
+                                            <div class="text-center">
+                                                <a class="small" href="<?= url("/registro") ?>">Criar Conta</a>
+                                            </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

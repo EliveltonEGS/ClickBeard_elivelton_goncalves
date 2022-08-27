@@ -4,7 +4,7 @@ namespace Source\Controllers;
 
 use League\Plates\Engine;
 
-class AdministracaoController
+class AgendamentoController
 {
 
     private $view;
@@ -15,7 +15,7 @@ class AdministracaoController
         $this->view->addData(["router" => $router]);
     }
 
-    public function home()
+    public function novo()
     {
         session_start();
         if (!isset($_SESSION["USUARIO"])) {
@@ -23,6 +23,6 @@ class AdministracaoController
             return;
         }
 
-        echo $this->view->render('adm/home');
+        echo $this->view->render('agendamento/novo');
     }
 }
