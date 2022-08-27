@@ -22,7 +22,14 @@ $router->get('/', 'UsuarioController:login', 'usuario.login');
 $router->get('/registro', 'UsuarioController:registro', 'usuario.registro');
 
 $router->group('/adm');
-$router->get('/home', 'AdministracaoController:home', 'adm.home');
+$router->get('/', 'AdministracaoController:home', 'adm.home');
+
+$router->group('/especialidade');
+$router->get('/', 'EspecialidadeController:home', 'especialidade.home');
+$router->get('/novo', 'EspecialidadeController:novo', 'especialidade.novo');
+$router->get('/editar/{id}', 'EspecialidadeController:editar', 'especialidade.editar');
+$router->post('/cadastrar', 'EspecialidadeController:cadastrar', 'especialidade.cadastrar');
+$router->get('/deletar/{id}', 'EspecialidadeController:deletar', 'especialidade.deletar');
 
 
 

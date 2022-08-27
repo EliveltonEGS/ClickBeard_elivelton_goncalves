@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '003ebd73353125b75baf66d17ee18b48a59c5529',
+        'reference' => '93154e4cbc309f320d43ea1131616d254ca2c502',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '003ebd73353125b75baf66d17ee18b48a59c5529',
+            'reference' => '93154e4cbc309f320d43ea1131616d254ca2c502',
             'dev_requirement' => false,
         ),
         'coffeecode/router' => array(

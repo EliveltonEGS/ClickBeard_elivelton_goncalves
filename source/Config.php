@@ -12,7 +12,7 @@ define("DB_CONFIG", [
     "driver" => "mysql",
     "host" => "localhost",
     "port" => "3306",
-    "dbname" => "db",
+    "dbname" => "click_beard",
     "username" => "root",
     "passwd" => ""
 ]);
@@ -27,6 +27,10 @@ function url(string $path): string
 
 function dd($data) {
     d($data);
+}
+
+function debug($data) {
+    echo "<pre>".print_r($data, true)."</pre>";
 }
 
 function writeLog($value, $logName)

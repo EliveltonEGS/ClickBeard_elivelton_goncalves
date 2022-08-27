@@ -1,9 +1,9 @@
 <?php
 
-namespace Source\Enttites;
+namespace Source\Entities;
 
 class Cliente {
-    
+
     private $cliente_id;
     private $nome;
     private $email;

@@ -1,11 +1,11 @@
 <?php
 
-namespace Source\Enttites;
+namespace Source\Entities;
 
 class Agendamento {
 
     private $agendamento_id;
-    private $hora_inicio;
+    private $hora_inico;
     private $hora_fim;
     private Barbeiro $barbeiro;
     private Cliente $cliente;
@@ -14,8 +14,8 @@ class Agendamento {
         return $this->agendamento_id;
     }
 
-    function getHora_inicio() {
-        return $this->hora_inicio;
+    function getHora_inico() {
+        return $this->hora_inico;
     }
 
     function getHora_fim() {
@@ -34,8 +34,8 @@ class Agendamento {
         $this->agendamento_id = $agendamento_id;
     }
 
-    function setHora_inicio($hora_inicio): void {
-        $this->hora_inicio = $hora_inicio;
+    function setHora_inico($hora_inico): void {
+        $this->hora_inico = $hora_inico;
     }
 
     function setHora_fim($hora_fim): void {

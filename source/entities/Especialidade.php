@@ -1,11 +1,12 @@
 <?php
 
-namespace Source\Enttites;
+namespace Source\Entities;
 
 class Especialidade {
+
     private $especialidade_id;
     private $descricao;
-    
+
     function getEspecialidade_id() {
         return $this->especialidade_id;
     }

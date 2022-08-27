@@ -1,13 +1,13 @@
 <?php
 
-namespace Source\Enttites;
+namespace Source\Entities;
 
 class Barbeiro {
 
     private $barbeiro_id;
     private $nome;
     private $cpf;
-    private $data_contratacao;
+    private $dataContratacao;
     private Especialidade $especialidade;
 
     function getBarbeiro_id() {
@@ -22,8 +22,8 @@ class Barbeiro {
         return $this->cpf;
     }
 
-    function getData_contratacao() {
-        return $this->data_contratacao;
+    function getDataContratacao() {
+        return $this->dataContratacao;
     }
 
     function getEspecialidade(): Especialidade {
@@ -42,8 +42,8 @@ class Barbeiro {
         $this->cpf = $cpf;
     }
 
-    function setData_contratacao($data_contratacao): void {
-        $this->data_contratacao = $data_contratacao;
+    function setDataContratacao($dataContratacao): void {
+        $this->dataContratacao = $dataContratacao;
     }
 
     function setEspecialidade(Especialidade $especialidade): void {
