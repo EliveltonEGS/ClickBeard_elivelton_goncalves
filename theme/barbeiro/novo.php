@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="form-group col-2">
-                        <label for="data_contratacao">Data Contrataçao</label>
+                        <label for="data_contratacao">Data Contratação</label>
                         <input type="date" v-model="data_contratacao" name="data_contratacao" id="data_contratacao" class="form-control">
                     </div>
 

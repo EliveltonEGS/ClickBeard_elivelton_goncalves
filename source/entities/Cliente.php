@@ -2,7 +2,8 @@
 
 namespace Source\Entities;
 
-class Cliente {
+class Cliente
+{
 
     private $cliente_id;
     private $nome;
@@ -11,52 +12,63 @@ class Cliente {
     private $confirm_senha;
     private $tipo;
 
-    function getCliente_id() {
+    function getCliente_id()
+    {
         return $this->cliente_id;
     }
 
-    function getNome() {
+    function getNome()
+    {
         return $this->nome;
     }
 
-    function getEmail() {
+    function getEmail()
+    {
         return $this->email;
     }
 
-    function getSenha() {
+    function getSenha()
+    {
         return $this->senha;
     }
 
-    function getConfirm_senha() {
+    function getConfirm_senha()
+    {
         return $this->confirm_senha;
     }
 
-    function getTipo() {
+    function getTipo()
+    {
         return $this->tipo;
     }
 
-    function setCliente_id($cliente_id): void {
+    function setCliente_id($cliente_id): void
+    {
         $this->cliente_id = $cliente_id;
     }
 
-    function setNome($nome): void {
+    function setNome($nome): void
+    {
         $this->nome = $nome;
     }
 
-    function setEmail($email): void {
+    function setEmail($email): void
+    {
         $this->email = $email;
     }
 
-    function setSenha($senha): void {
+    function setSenha($senha): void
+    {
         $this->senha = $senha;
     }
 
-    function setConfirm_senha($confirm_senha): void {
+    function setConfirm_senha($confirm_senha): void
+    {
         $this->confirm_senha = $confirm_senha;
     }
 
-    function setTipo($tipo): void {
+    function setTipo($tipo): void
+    {
         $this->tipo = $tipo;
     }
-
 }

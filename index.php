@@ -34,12 +34,19 @@ $router->get('/', 'BarbeiroController:home', 'barbeiro.home');
 $router->get('/novo', 'BarbeiroController:novo', 'barbeiro.novo');
 $router->get('/especialidade', 'BarbeiroController:especialidade', 'barbeiro.especialidade');
 $router->post('/cadastrar', 'BarbeiroController:cadastrar', 'barbeiro.cadastrar');
-$router->get('/deletar/{id}', 'BarbeiroController:deletar', 'BarbeiroController.deletar');
-$router->post('/get-especialidade', 'BarbeiroController:especialidadBarbeiro', 'BarbeiroController.get-especialidade');
+$router->get('/deletar/{id}', 'BarbeiroController:deletar', 'barbeiro.deletar');
+$router->post('/get-especialidade', 'BarbeiroController:especialidadBarbeiro', 'barbeiro.get-especialidade');
 
 #ROTAS DO AGENDAMENTO
 $router->group('/agendamento');
 $router->get('/novo', 'AgendamentoController:novo', 'agendamento.novo');
+$router->get('/barbeiros', 'AgendamentoController:listaBarbeiros', 'agendamento.barbeiros');
+$router->post('/horarios', 'AgendamentoController:horarios', 'agendamento.horarios');
+$router->post('/cadastrar', 'AgendamentoController:cadastrar', 'agendamento.cadastrar');
+$router->get('/agendamentos', 'AgendamentoController:listaAgendamentos', 'agendamento.agendamentos');
+$router->post('/cancelar', 'AgendamentoController:cancelar', 'agendamento.cancelar');
+$router->get('/concluir/{id}', 'AgendamentoController:concluirAgendamento', 'agendamento.concluir');
+$router->get('/especialidade/{id}', 'AgendamentoController:especialidade', 'agendamento.especialidade');
 
 $router->dispatch();
 

@@ -2,25 +2,29 @@
 
 namespace Source\Entities;
 
-class Especialidade {
+class Especialidade
+{
 
     private $especialidade_id;
     private $descricao;
 
-    function getEspecialidade_id() {
+    function getEspecialidade_id()
+    {
         return $this->especialidade_id;
     }
 
-    function getDescricao() {
+    function getDescricao()
+    {
         return $this->descricao;
     }
 
-    function setEspecialidade_id($especialidade_id): void {
+    function setEspecialidade_id($especialidade_id): void
+    {
         $this->especialidade_id = $especialidade_id;
     }
 
-    function setDescricao($descricao): void {
+    function setDescricao($descricao): void
+    {
         $this->descricao = $descricao;
     }
-
 }

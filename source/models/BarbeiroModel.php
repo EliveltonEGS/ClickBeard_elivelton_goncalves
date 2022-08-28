@@ -31,7 +31,7 @@ class BarbeiroModel extends Model
         $barbeiros = $this->select("SELECT
         barbeiro_id,
         nome,
-        DATE_FORMAT(data_contratacao, '%d/%m/%U') 'data_contratacao'
+        DATE_FORMAT(data_contratacao, '%d/%m/%Y') 'data_contratacao'
     FROM 
         barbeiros");
 

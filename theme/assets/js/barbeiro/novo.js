@@ -7,7 +7,7 @@ new Vue({
             especialidadeBarbeiro: [],
             nome: '',
             cpf: '',
-            data_contratacao: '',
+            data_contratacao: ''
         }
     },
     methods: {
@@ -56,6 +56,11 @@ new Vue({
                 alert('Adicione uma ou mais especialidades!');
                 return false;
             }
+
+            //REMOVE DUPLICADOS CASO O USUÁRIO ADICIONE ESPECIALIDADES REPETIDAS
+            let especialidades = this.especialidadeBarbeiro;
+            let removeDuplicados = especialidades.filter((este, i) => especialidades.indexOf(este) === i);
+            this.especialidadeBarbeiro = removeDuplicados;
 
             let barbeiro = {
                 nome: nome,

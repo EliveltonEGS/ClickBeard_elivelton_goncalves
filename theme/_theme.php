@@ -47,9 +47,13 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= $router->route("especialidade.home"); ?>">Especialidades</a>
-                        <a class="collapse-item" href="<?= $router->route("barbeiro.home"); ?>">Barbeiros</a>
-                        <a class="collapse-item" href="<?= $router->route("agendamento.novo"); ?>">Agendamento</a>
+                        <?php if (isset($_SESSION["USUARIO"]) && $_SESSION["USUARIO"]["tipo"] == "A") { ?>
+                            <a class="collapse-item" href="<?= $router->route("especialidade.home"); ?>">Especialidades</a>
+                            <a class="collapse-item" href="<?= $router->route("barbeiro.home"); ?>">Barbeiros</a>
+                            <a class="collapse-item" href="<?= $router->route("adm.home"); ?>">Agendamento</a>
+                        <?php } else { ?>
+                            <a class="collapse-item" href="<?= $router->route("adm.home"); ?>">Agendamento</a>
+                        <?php } ?>
                     </div>
                 </div>
             </li>
@@ -65,6 +69,11 @@
 
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <div class="topbar-divider d-none d-sm-block"></div>

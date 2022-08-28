@@ -13,12 +13,6 @@
                 </div>
             <?php } ?>
 
-            <?php if (isset($success)) { ?>
-                <div class="alert alert-success" role="alert">
-                    <?= $success; ?>
-                </div>
-            <?php } ?>
-
             <form action="<?= $router->route("especialidade.cadastrar") ?>" method="post" enctype="multipart/form-data">
                 <div class="form-row">
                     <?php $especialidade_id = isset($especialidade_id) ? $especialidade_id : "";  ?>

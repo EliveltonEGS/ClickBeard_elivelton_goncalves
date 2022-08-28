@@ -58,7 +58,7 @@ class EspecialidadeController
     public function cadastrar(array $data): void
     {
         if (in_array('', $data)) {
-            echo $this->view->render('especialidade/editar', ['error' => 'Todos os campos são obrigatórios!', 'especialidade_id' => $data['especialidade_id']]);
+            echo $this->view->render('especialidade/editar', ['error' => 'Todos os campos são obrigatórios!', 'especialidade_id' => isset($data['especialidade_id']) ? $data['especialidade_id'] : ""]);
             return;
         }
 
@@ -66,7 +66,7 @@ class EspecialidadeController
             $this->especialidade->setEspecialidade_id($data['especialidade_id']);
             $this->especialidade->setDescricao($data['especialidade']);
             $this->especialidadeModel->alterar($this->especialidade);
-            echo $this->view->render('especialidade/editar', ['success' => 'Nova especialidade alterada com sucesso!']);
+            echo $this->view->render('especialidade/home', ['especialidades' => $this->especialidadeModel->listarTodos()]);
         } else {
             $this->especialidade->setDescricao($data['especialidade']);
             $this->especialidadeModel->cadastrar($this->especialidade);
