@@ -9,7 +9,7 @@
 * Deve ser movida a pasta do projeto para o diretório [C:\xampp\htdocs\ClickBeard_elivelton_goncalves] no ambiente windows que é o que utilizei;
 * Para executar o projeto no navegador basta start o xampp e acessar no navegador [http://localhost/ClickBeard_elivelton_goncalves/].
 
-### USUÁRIO ADM - login:
+### Usuário ADM - login:
 email: 
 ```
 adm@gmail.com
