@@ -38,6 +38,7 @@ Obs:
 - Não foram realizado filtros e paginações pois acredito que o foco do mini sistema seria o gerenciamento de clientes e seus respectivos agendamentos de horários;
 - O CPF no cadastro de barbeiros deve ser somente números.
 - No diretório [\ClickBeard_elivelton_goncalves\docs\prints] contém alguns prints do sistema em funcionamento.
+- Tem partes do sistema que foi desenvolvido somente com PHP e outras partes com JavaScript para demonstrar que pode ser feito de várias formas diferentes.
 
 
 ##### Agradecimentos: O projeto foi devertido de desenvolver, esperto ter atendido o esperado.
