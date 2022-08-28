@@ -28,7 +28,7 @@ adm
 - O usuário ADM pode finalizar o atendimento após encerrá-lo;
 - O usuário ADM pode cancelar o agendamento a qualquer momento sem intervalo de tempo.
 
-### O usuário CLIENTE faz as seguinte gestão
+### O usuário CLIENTE faz as seguintes gestões
 
 - Pode agendar um horário, escolher o barbeiro com suas especialidades;
 - Visualizar o status do agendamento;
