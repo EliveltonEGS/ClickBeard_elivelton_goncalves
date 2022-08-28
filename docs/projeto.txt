@@ -1,0 +1,52 @@
+Sistema de agendamento para barbearia - ClickBeard
+
+- O dono de uma barbearia te procurou para desenvolver um sistema de agendamento.
+- Nesse sistema ele deve poder cadastrar todos os barbeiros (nome, CPF e data da contratação) e suas respectivas especialidades (sobrancelha, corte de tesoura, barba, etc...).
+- Um barbeiro pode ter mais de uma especialidade.
+- A barbearia funciona todos os dias de 8:00h às 18:00h.
+- O dono (ADM) precisa visualizar de forma fácil os agendamentos do dia atual e os próximos.
+- Os clientes devem se cadastrar no sistema (nome, email e senha).
+- Um email deve pertencer somente a um cliente.
+- Os clientes devem conseguir fazer login no sistema.
+- Após autenticação, o cliente deve selecionar um horário, serviço que vai fazer (especialidade) e um barbeiro que faça o serviço escolhido para concluir o agendamento (Atenção: um barbeiro não pode atender dois clientes no mesmo horário)
+- Leve em consideração que um atendimento demora exatamente 30 minutos.
+- O cliente pode cancelar um agendamento até 2 horas antes do horário marcado.
+- O cliente pode visualizar seus agendamentos.
+
+-> CADASTRAR ESPECIALIDADES [ OK]
+-> CADASTRAR BARBEIROS(PODE TER MAIS DE UMA ESPECIALIDADE)[OK]
+-> CADASTRO DE CLIENTES
+	-> UM EMAIL DEVE PERTENCER SOMENTE A UM CLIENTE(UNICO) [OK]
+	-> CLIENTES DEVE CONSEGUIR LOGAR NO SISTEMA [OK]
+
+	-> APOS A AUTENTICAÇÃO O CLIENTE DEVE SELECIONAR UM HORÁRIO E SELCIONAR O TIPO DE SERVIÇO PARA CONCLUIR O AGENDAMENTO
+-> UM BARBEIRO NÃO PODE ATENDER DOIS CLIENTES NO MESMO HORÁRIO [OK]
+-> UM ATENDIMENTO DEMORA 30 MINUTOS [OK]
+-> O CLIENTE PODE CANCELAR O AGENDAMENTO 2 HORAS ANTES DO HORÁRIO MARCADO [OK]
+-> O CLIENTE PODE VISUALIZAR SEU AGENDAMENTO [OK]
+
+----
+
+Obs: 
+	- Não foram realizado filtros e paginações pois acredito que o foco do mini sistema seria o gerenciamento de clientes e seus respectivos agendamentos de horários;
+	- O CPF no cadastro de barbeiros deve ser somente número.
+
+## USUÁRIO ADM - login:
+email: adm@gmail.com
+senha: adm
+
+- O usuário ADM é resonsável por cadastrar/editar/excluir as especialidades;
+- O usuário ADM é responsável por cadastrar os barbeiros e sua data de contratação e vincular as suas especialidades, poderá também excluir o barbeiro cadastrado;
+- O usuário ADM pode visualizar e também efetuar cancelamento dos horários agendados pelos clientes;
+- O usuário ADM pode finalizar o atendimento após encerrá-lo;
+- O usuário ADM pode cancelar o agendamento a qualquer momento sem intervalo de tempo;
+
+## USUÁRIO CLIENTE;
+
+- Pode agendar um horário, escolher o barbeiro com suas especialidades;
+- visualizar este mesmo agendamento e cancelar caso desejar com duas horas de antedêcencia;
+
+
+
+
+
