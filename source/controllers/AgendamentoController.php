@@ -92,11 +92,14 @@ class AgendamentoController
 
     public function listaAgendamentos(): void
     {
+        $json = file_get_contents('php://input');
+        $data = json_decode($json, true);
+
         session_start();
         if ($_SESSION["USUARIO"]["tipo"] == "A") {
-            echo json_encode($this->agendamentoModel->listaTodosAgendamentos());
+            echo json_encode($this->agendamentoModel->listaTodosAgendamentos($data['nome']));
         } else {
-            echo json_encode($this->agendamentoModel->listaAgendamentosPorClienteNormais($_SESSION["USUARIO"]["cliente_id"]));
+            echo json_encode($this->agendamentoModel->listaAgendamentosPorClienteNormais($_SESSION["USUARIO"]["cliente_id"], $data['nome']));
         }
     }
 

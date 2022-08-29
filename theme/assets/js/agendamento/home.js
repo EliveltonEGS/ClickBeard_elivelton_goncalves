@@ -3,12 +3,13 @@ new Vue({
     data() {
         return {
             url_base: document.getElementById('url_base').value,
-            agendamentos: []
+            agendamentos: [],
+            nome: ''
         }
     },
     methods: {
         async listaAgendamentos() {
-            await axios.get(`${this.url_base}/agendamento/agendamentos`).then(res => {
+            await axios.post(`${this.url_base}/agendamento/agendamentos`, { nome: this.nome }).then(res => {
                 this.agendamentos = res.data
             });
         },
@@ -37,8 +38,5 @@ new Vue({
                 alert('Agendamento finalizado com sucesso!');
             });
         }
-    },
-    mounted() {
-        this.listaAgendamentos();
     }
 });

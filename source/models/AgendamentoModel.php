@@ -24,7 +24,7 @@ class AgendamentoModel extends Model
         ]);
     }
 
-    public function listaAgendamentosPorClienteNormais($id): array
+    public function listaAgendamentosPorClienteNormais($id, $nome): array
     {
         $agendamento = $this->select("SELECT
             a.horario_id,
@@ -44,7 +44,7 @@ class AgendamentoModel extends Model
             INNER JOIN 
                 barbeiros b ON b.barbeiro_id = a.barbeiro_id
             
-        WHERE c.cliente_id = :id", [":id" => intval($id)]);
+        WHERE c.cliente_id = :id AND c.nome LIKE :nome", [":id" => intval($id), ":nome" => '%' . $nome . '%']);
 
         if (!empty($agendamento)) {
             return $agendamento;
@@ -53,7 +53,7 @@ class AgendamentoModel extends Model
         }
     }
 
-    public function listaTodosAgendamentos(): array
+    public function listaTodosAgendamentos($nome): array
     {
         return $this->select("SELECT
             a.horario_id,
@@ -71,7 +71,8 @@ class AgendamentoModel extends Model
             INNER JOIN 
                 clientes c ON c.cliente_id = a.cliente_id
             INNER JOIN 
-                barbeiros b ON b.barbeiro_id = a.barbeiro_id");
+                barbeiros b ON b.barbeiro_id = a.barbeiro_id
+        WHERE c.nome LIKE :nome", [":nome" => '%' . $nome . '%']);
     }
 
     public function verificarIntervaloCancelamento($id): string

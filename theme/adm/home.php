@@ -7,9 +7,36 @@
     <div class="card-body">
         <div class="table-responsive">
             <?php if (isset($_SESSION["USUARIO"]) && $_SESSION["USUARIO"]["tipo"] == "C") { ?>
-                <div class="text-center">
-                    <a href="<?= $router->route("agendamento.novo") ?>" class="btn btn-primary mb-3"><i class="fas fa-new"></i>Novo</a>
+                <div class="text-center mb-3">
+                    <table style="width: 100%;">
+                        <tr>
+                            <td style="width: 20%;">
+                                Pesquisar Por Nome
+                            </td>
+                            <td style="width: 60%;">
+                                <input type="text" id="nome" name="nome" v-model="nome" class="form-control">
+                            </td>
+                            <td style="width: 20%; text-align: left;">
+                                <button v-on:click="listaAgendamentos" class="btn btn-primary">Pesquisar</button>
+                                <a href="<?= $router->route("agendamento.novo") ?>" class="btn btn-primary"><i class="fas fa-new"></i>Novo</a>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
+            <?php } else { ?>
+                <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 20%;">
+                            Pesquisar Por Nome
+                        </td>
+                        <td style="width: 60%;">
+                            <input type="text" id="nome" name="nome" v-model="nome" class="form-control">
+                        </td>
+                        <td style="width: 20%; text-align: left;">
+                            <button v-on:click="listaAgendamentos" class="btn btn-primary">Pesquisar</button>
+                        </td>
+                    </tr>
+                </table>
             <?php } ?>
             <input type="hidden" id="url_base" value="<?= ROOT; ?>">
             <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">

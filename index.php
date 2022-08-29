@@ -43,7 +43,7 @@ $router->get('/novo', 'AgendamentoController:novo', 'agendamento.novo');
 $router->get('/barbeiros', 'AgendamentoController:listaBarbeiros', 'agendamento.barbeiros');
 $router->post('/horarios', 'AgendamentoController:horarios', 'agendamento.horarios');
 $router->post('/cadastrar', 'AgendamentoController:cadastrar', 'agendamento.cadastrar');
-$router->get('/agendamentos', 'AgendamentoController:listaAgendamentos', 'agendamento.agendamentos');
+$router->post('/agendamentos', 'AgendamentoController:listaAgendamentos', 'agendamento.agendamentos');
 $router->post('/cancelar', 'AgendamentoController:cancelar', 'agendamento.cancelar');
 $router->get('/concluir/{id}', 'AgendamentoController:concluirAgendamento', 'agendamento.concluir');
 $router->get('/especialidade/{id}', 'AgendamentoController:especialidade', 'agendamento.especialidade');
