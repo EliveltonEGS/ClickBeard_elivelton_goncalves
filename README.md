@@ -41,4 +41,4 @@ Obs:
 - Tem partes do sistema que foi desenvolvido somente com PHP e outras partes com JavaScript para demonstrar que pode ser feito de várias formas diferentes.
 
 
-##### Agradecimentos: O projeto foi divertido de desenvolver, esperto ter atendido o esperado.
+##### Agradecimentos: O projeto foi divertido de desenvolver, espero ter atendido o esperado.
