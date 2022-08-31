@@ -22,6 +22,12 @@ new Vue({
             await axios.get(`${this.url_base}/agendamento/barbeiros`).then(res => this.barbeiros = res.data);
         },
         async cadastrar() {
+
+            if (this.barbeiro == '' || this.data == '' || this.horas == '') {
+                alert('Todos os campos são obrigatórios!');
+                return false;
+            }
+
             let objetos = {
                 barbeiro_id: this.barbeiro.barbeiro_id,
                 horario: this.horas.hora,
