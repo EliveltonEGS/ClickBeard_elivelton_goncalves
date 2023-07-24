@@ -39,6 +39,3 @@ Obs:
 - O CPF no cadastro de barbeiros deve ser somente números.
 - No diretório [\ClickBeard_elivelton_goncalves\docs\prints] contém alguns prints do sistema em funcionamento.
 - Tem partes do sistema que foi desenvolvido somente com PHP e outras partes com JavaScript para demonstrar que pode ser feito de várias formas diferentes.
-
-
-##### Agradecimentos: O projeto foi divertido de desenvolver, espero ter atendido o esperado.
